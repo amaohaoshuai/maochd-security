@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.maochd.security.dao.WorkDetailDao">
+
+    <insert id="addWork" parameterType="com.maochd.security.entity.WorkInfo">
+        insert into s_work_info (work_id, work_detail, create_date)
+        values (#{workInfo.workId}, #{workInfo.workDetail}, now())
+    </insert>
+
+    <delete id="modifyWork" parameterType="com.maochd.security.entity.WorkInfo">
+        update s_work_info
+        set work_detail      = #{workInfo.workDetail},
+            last_update_date = now()
+        where work_id = #{workInfo.workId}
+    </delete>
+
+</mapper>
