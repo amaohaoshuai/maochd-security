@@ -1,6 +1,6 @@
 package com.maochd.security.filter;
 
-import com.maochd.security.service.impl.SelfUserDetailsService;
+import com.maochd.security.service.impl.SelfUserDetailsServiceImpl;
 import com.maochd.security.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,7 +24,7 @@ import java.io.IOException;
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
-    SelfUserDetailsService userDetailsService;
+    SelfUserDetailsServiceImpl userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

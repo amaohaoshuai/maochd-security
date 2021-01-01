@@ -22,7 +22,7 @@ import java.io.IOException;
 @Component
 public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException {
         UserInfo userDetails = (UserInfo) authentication.getPrincipal();
 
         String jwtToken = JwtUtils.generateToken(userDetails.getUsername(), userDetails.getUserId());

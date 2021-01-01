@@ -21,7 +21,7 @@ import java.io.IOException;
 public class AjaxAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
+    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException {
         httpServletResponse.getWriter().write(JSON.toJSONString(ResultInfo.result(ResultEnum.USER_LOGIN_FAILED, false)));
     }
 

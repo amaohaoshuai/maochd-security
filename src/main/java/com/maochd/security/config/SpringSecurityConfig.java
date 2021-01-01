@@ -2,7 +2,7 @@ package com.maochd.security.config;
 
 import com.maochd.security.filter.JwtAuthenticationTokenFilter;
 import com.maochd.security.security.*;
-import com.maochd.security.service.impl.SelfUserDetailsService;
+import com.maochd.security.service.impl.SelfUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -29,19 +29,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private AjaxAuthenticationSuccessHandler authenticationSuccessHandler;
 
     @Autowired
-    private AjaxAuthenticationFailureHandler authenticationFailureHandler; //登录失败返回的 JSON 格式数据给前端（否则为 html）
+    private AjaxAuthenticationFailureHandler authenticationFailureHandler;
 
     @Autowired
-    private AjaxLogoutSuccessHandler logoutSuccessHandler;//注销成功返回的 JSON 格式数据给前端（否则为 登录时的 html）
+    private AjaxLogoutSuccessHandler logoutSuccessHandler;
 
     @Autowired
     private AjaxAccessDeniedHandler accessDeniedHandler;
 
     @Autowired
-    private SelfUserDetailsService userDetailsService; // 自定义user
+    private SelfUserDetailsServiceImpl userDetailsService;
 
     @Autowired
-    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter; // JWT 拦截器
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

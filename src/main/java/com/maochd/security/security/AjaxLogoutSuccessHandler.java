@@ -20,7 +20,7 @@ import java.io.IOException;
 @Component
 public class AjaxLogoutSuccessHandler implements LogoutSuccessHandler {
     @Override
-    public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
+    public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException {
         httpServletResponse.getWriter().write(JSON.toJSONString(ResultInfo.result(ResultEnum.USER_LOGOUT_SUCCESS, true)));
     }
 

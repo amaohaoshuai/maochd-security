@@ -21,7 +21,7 @@ import java.util.Set;
  * @author maochd
  */
 @Component
-public class SelfUserDetailsService implements UserDetailsService {
+public class SelfUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private RbacAuthorityDao rbacAuthorityDao;

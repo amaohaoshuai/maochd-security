@@ -21,7 +21,7 @@ import java.io.IOException;
 public class AjaxAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
-    public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
-        httpServletResponse.getWriter().write(JSON.toJSONString(ResultInfo.result(ResultEnum.USER_NEED_AUTHORITIES,false)));
+    public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException {
+        httpServletResponse.getWriter().write(JSON.toJSONString(ResultInfo.result(ResultEnum.USER_NEED_AUTHORITIES, false)));
     }
 }
