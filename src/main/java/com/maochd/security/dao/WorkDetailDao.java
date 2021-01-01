@@ -5,6 +5,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 业务类Dao
+ *
+ * @author maochd
+ */
 @Mapper
 @Repository
 public interface WorkDetailDao {

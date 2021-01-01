@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * 业务类Dao
+ *
+ * @author maochd
+ */
 @Mapper
 @Repository
 public interface SystemManagementDao {
@@ -14,7 +19,5 @@ public interface SystemManagementDao {
 
     int deleteUser(@Param("userId") String userId);
 
-    UserInfo getUser(@Param("username") String username);
 
-    List<String> getRoles(@Param("userInfo") UserInfo user);
 }

@@ -13,5 +13,21 @@
         where su.user_name = #{username}
     </select>
 
+    <select id="getUser" resultType="com.maochd.security.entity.UserInfo">
+        select user_id          as userId,
+               user_name        as username,
+               password         as password,
+               create_date      as createDate,
+               last_update_date as lastUpdateDate
+        from s_user
+        where user_name = #{username}
+    </select>
+
+    <select id="getRoles" parameterType="com.maochd.security.entity.UserInfo" resultType="java.lang.String">
+        select sr.role_name
+        from s_role sr
+                 join s_user_role_mapping surm on sr.role_id = surm.role_id
+        where surm.user_id = #{userInfo.userId};
+    </select>
 
 </mapper>

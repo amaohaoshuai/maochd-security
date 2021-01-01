@@ -7,19 +7,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public final class ResultVO implements Serializable {
+/**
+ * 返回结果包装类
+ *
+ * @author maochd
+ */
+public final class ResultInfo implements Serializable {
 
     private static final long serialVersionUID = 1725159680599612404L;
 
-    /**
-     * 返回msg，object，以及token
-     * 返回的code为默认
-     *
-     * @param message
-     * @param data
-     * @param jwtToken
-     * @return
-     */
     public static Map<String, Object> success(String message, Object data, String jwtToken, Boolean success) {
         Map<String, Object> map = new HashMap<>();
         map.put("jwtToken", jwtToken);
@@ -30,14 +26,6 @@ public final class ResultVO implements Serializable {
         return map;
     }
 
-    /**
-     * 返回object，以及token
-     * 返回的msg，code为默认
-     *
-     * @param data
-     * @param jwtToken
-     * @return
-     */
     public static Map<String, Object> success(Object data, String jwtToken) {
         Map<String, Object> map = new HashMap<>();
         map.put("jwtToken", jwtToken);
@@ -48,11 +36,6 @@ public final class ResultVO implements Serializable {
         return map;
     }
 
-    /**
-     * 返回默认的信息
-     *
-     * @return
-     */
     public static Map<String, Object> success() {
         Map<String, Object> map = new HashMap<>();
         map.put("jwtToken", null);
@@ -89,9 +72,6 @@ public final class ResultVO implements Serializable {
         return getStringObjectMap(respCode, success);
     }
 
-    /*
-     * 成功返回特定的状态码和信息
-     * */
     public static Map<String, Object> result(ResultEnum respCode, Object data, Boolean success) {
         return getStringObjectMap(respCode, data, success);
     }
@@ -105,9 +85,6 @@ public final class ResultVO implements Serializable {
         return map;
     }
 
-    /*
-     * 成功返回特定的状态码和信息
-     * */
     public static Map<String, Object> result(ResultEnum respCode, Boolean success) {
         return getStringObjectMap(respCode, success);
     }
@@ -121,9 +98,6 @@ public final class ResultVO implements Serializable {
         return map;
     }
 
-    /*
-     * 成功返回特定的状态码和信息
-     * */
     public static Map<String, Object> result(ResultEnum respCode, String jwtToken, Boolean success) {
         Map<String, Object> map = new HashMap<>();
         map.put("jwtToken", jwtToken);

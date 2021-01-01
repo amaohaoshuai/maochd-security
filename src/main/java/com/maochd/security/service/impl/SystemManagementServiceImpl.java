@@ -7,6 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 业务类Service
+ *
+ * @author maochd
+ */
 @Service
 public class SystemManagementServiceImpl implements SystemManagementService {
 

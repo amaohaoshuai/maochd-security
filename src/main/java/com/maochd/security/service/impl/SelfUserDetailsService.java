@@ -1,5 +1,6 @@
 package com.maochd.security.service.impl;
 
+import com.maochd.security.dao.RbacAuthorityDao;
 import com.maochd.security.dao.SystemManagementDao;
 import com.maochd.security.entity.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +15,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * security认证实现类
+ *
+ * @author maochd
+ */
 @Component
 public class SelfUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private SystemManagementDao systemManagementDao;
+    private RbacAuthorityDao rbacAuthorityDao;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        UserInfo user = systemManagementDao.getUser(username);
+        UserInfo user = rbacAuthorityDao.getUser(username);
         if (user == null) {
             throw new UsernameNotFoundException("该用户不存在");
         }
-        List<String> roles = systemManagementDao.getRoles(user);
+        List<String> roles = rbacAuthorityDao.getRoles(user);
 
         Set<GrantedAuthority> authoritiesSet = new HashSet<>();
         roles.forEach(role -> authoritiesSet.add(new SimpleGrantedAuthority(role)));

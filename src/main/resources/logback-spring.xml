@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) -[%-5level] [%thread] %c - %msg%n" />
-	<property name="LOG_FILE_PATH" value="${LOG_HOME-/home/maochd}/logs" />
+	<property name="LOG_FILE_PATH" value="logs" />
 	<property name="APP_NAME" value="maochd-security" />
 
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

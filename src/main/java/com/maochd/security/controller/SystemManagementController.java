@@ -6,6 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 业务类Controller
+ *
+ * @author maochd
+ */
 @Slf4j
 @RestController
 @RequestMapping("/systemManagement")

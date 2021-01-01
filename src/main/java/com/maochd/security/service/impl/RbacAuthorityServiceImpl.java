@@ -11,12 +11,18 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * security授权实现类
+ *
+ * @author maochd
+ */
 @Component("rbacauthorityservice")
 public class RbacAuthorityServiceImpl implements RbacAuthorityService {
 
     @Autowired
     private RbacAuthorityDao rbacAuthorityDao;
 
+    @Override
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
         Object userInfo = authentication.getPrincipal();
         boolean hasPermission = false;

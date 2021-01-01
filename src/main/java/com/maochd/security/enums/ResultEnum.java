@@ -2,6 +2,11 @@ package com.maochd.security.enums;
 
 import lombok.Getter;
 
+/**
+ * 结果枚举类
+ *
+ * @author maochd
+ */
 @Getter
 public enum ResultEnum {
     SUCCESS(101, "成功"),
